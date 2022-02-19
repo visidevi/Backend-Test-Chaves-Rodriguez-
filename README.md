@@ -22,7 +22,7 @@ password = admin
 
 If you use another user consider changing the variables in the postman environment that is attached with this repository
 
-![Postman]('https://imgur.com/ESvP6vo')
+![Postman](https://github.com/visidevi/Backend-Test-Chaves-Rodriguez-/blob/eca5cc89be8e640c2ba3be9cd3d51d2253450e49/images/1.png)
 
 ```
 
@@ -126,7 +126,7 @@ Replace the `SLACK APP TOKEN` variables with your application's in the `backend_
 
 `SLACK_APP_TOKEN` = getenv("SLACK_APP_TOKEN", default=" ")
 
-![Variables]('https://imgur.com/EAtB6Av')
+![Variables](https://github.com/visidevi/Backend-Test-Chaves-Rodriguez-/blob/eca5cc89be8e640c2ba3be9cd3d51d2253450e49/images/2.png)
 
 ### Celery
 
@@ -146,7 +146,7 @@ celery -A backend_test beat --loglevel DEBUG
 
 ```
 
-![Celery Beat](https://imgur.com/WX73aui)
+![Celery Beat](https://github.com/visidevi/Backend-Test-Chaves-Rodriguez-/blob/eca5cc89be8e640c2ba3be9cd3d51d2253450e49/images/5.png)
 
 ### Interact with user response
 
@@ -158,13 +158,13 @@ In local environments We can use `ngrok http 8000` to get a valid URL for Slack
 
 > ngrok allows us to expose a dynamically generated URL to the internet, which points to a web service running on our local machine
 
-![Request URL](https://imgur.com/H1juiJC)
+![Request URL](https://github.com/visidevi/Backend-Test-Chaves-Rodriguez-/blob/eca5cc89be8e640c2ba3be9cd3d51d2253450e49/images/6.png)
 
-![ngrok](https://imgur.com/DuWMydE)
+![ngrok](https://github.com/visidevi/Backend-Test-Chaves-Rodriguez-/blob/eca5cc89be8e640c2ba3be9cd3d51d2253450e49/images/7.png)
 
-#### DEMO
+#### DEMO VIDEO 
 
-[![Demo](https://imgur.com/6TbYzXE)(https://www.youtube.com/watch?v=Csy5LnbmJQA&ab_channel=visakadevi)]
+[![Demo](https://github.com/visidevi/Backend-Test-Chaves-Rodriguez-/blob/eca5cc89be8e640c2ba3be9cd3d51d2253450e49/images/Screen%20Shot%202022-02-19%20at%2001.25.21.png)(https://www.youtube.com/watch?v=Csy5LnbmJQA&ab_channel=visakadevi)]
 
 ### Validations
 
@@ -188,21 +188,22 @@ python manage.py test
 
 ```
 
-![Notification](https://imgur.com/BZO6vuO)
+![Notification](https://github.com/visidevi/Backend-Test-Chaves-Rodriguez-/blob/eca5cc89be8e640c2ba3be9cd3d51d2253450e49/images/slack_1.png)
 
-![Created Order](https://imgur.com/x8RJjZi)
+![Created Order](https://github.com/visidevi/Backend-Test-Chaves-Rodriguez-/blob/eca5cc89be8e640c2ba3be9cd3d51d2253450e49/images/slack_2.png)
 
-![Customized Order](https://imgur.com/zpWxi7P)
+![Customized Order](https://github.com/visidevi/Backend-Test-Chaves-Rodriguez-/blob/eca5cc89be8e640c2ba3be9cd3d51d2253450e49/images/slack_3.png)
 
-![Validation](https://imgur.com/sWfpwUb)
+![Validation](https://github.com/visidevi/Backend-Test-Chaves-Rodriguez-/blob/eca5cc89be8e640c2ba3be9cd3d51d2253450e49/images/slack_4.png)
 
-![Validation](https://imgur.com/8jHQ7mq)
+![Validation](https://github.com/visidevi/Backend-Test-Chaves-Rodriguez-/blob/eca5cc89be8e640c2ba3be9cd3d51d2253450e49/images/slack_5.png)
 
 #### Coverage
 
 `coverage run --source="." manage.py test`
 
-`coverage report html`
+`coverage html`
+`coverage report`
 
 ##### Rebuilding the base Docker image
 
