@@ -134,7 +134,7 @@ Raise an instance of celery beat
 
 `docker ps`
 
-Copy the container id from the image `cornershop-backend-test_backend`
+Copy the `container id` from the image `cornershop-backend-test_backend`
 
 ```
 
