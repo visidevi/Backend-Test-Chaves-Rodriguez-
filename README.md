@@ -34,9 +34,9 @@ dev up
 
 A postman collection is available for testing.
 
-[collection](./postman/Backend_Test.postman_collection.json)
+[collection](https://github.com/visidevi/Backend-Test-Chaves-Rodriguez-/blob/d50d7ec2366d312925fff075bb5c06484e6ae215/postman/Backend_Test.postman_collection.json)
 
-[environment](./NORA-TOKEN.postman_environment.json)
+[environment](https://github.com/visidevi/Backend-Test-Chaves-Rodriguez-/blob/d50d7ec2366d312925fff075bb5c06484e6ae215/postman/NORA-TOKEN.postman_environment.json)
 
 The postman file has a pre_script that obtains the Nora token for authentication
 
