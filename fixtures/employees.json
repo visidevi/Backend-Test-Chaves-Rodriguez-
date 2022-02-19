@@ -1,0 +1,13 @@
+[
+    {
+        "model": "employees.employee",
+        "pk": 3,
+        "fields": {
+            "username": "visidevi",
+            "channel": "U031PNDENLD",
+            "tz": "America/Santiago",
+            "deleted": false,
+            "ordered_menus": 0
+        }
+    }
+]

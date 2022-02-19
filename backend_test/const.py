@@ -1,0 +1,7 @@
+USER_ALREADY_HAS_AN_ORDER = "The User already has an order created for this day"
+OPTION_DOES_NOT_EXIST = "The selected option does not exist in the menu of the day selected"
+EXCEED_TIME_ALLOWED = "No orders were submitted after 11 a.m. Chilean time"
+CAN_CUSTOMIZE= "Your request was created, you can still customize your order if you prefer"
+CREATED_SUCCESSFULLY="Your request was created successfully"
+SLACK_ORDER_ERROR="There was an error creating your order, please try again"
+SLACK_SELECT_OPTION_ERROR="Select an option from the menu"

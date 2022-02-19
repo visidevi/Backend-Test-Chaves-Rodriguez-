@@ -1,0 +1,56 @@
+[
+    {
+        "model": "menus.menu",
+        "pk": "4302203d-8262-4496-a17f-6b7ca8034658",
+        "fields": {
+            "message": "Menu 17 Febrero",
+            "date": "2022-02-17"
+        }
+    },
+    {
+        "model": "menus.option",
+        "pk": 3,
+        "fields": {
+            "description": "Tortilla jugosa vegana de calabac\u00edn",
+            "menu": "4302203d-8262-4496-a17f-6b7ca8034658"
+        }
+    },
+    {
+        "model": "menus.option",
+        "pk": 4,
+        "fields": {
+            "description": "Revuelto vegano de tofu",
+            "menu": "4302203d-8262-4496-a17f-6b7ca8034658"
+        }
+    },
+    {
+        "model": "menus.option",
+        "pk": 5,
+        "fields": {
+            "description": "Fideos de arroz con salteado de tofu y pimiento",
+            "menu": "4302203d-8262-4496-a17f-6b7ca8034658"
+        }
+    },
+    {
+        "model": "orders.order",
+        "pk": 41,
+        "fields": {
+            "created": "2022-02-18T01:52:25.073Z",
+            "selected_option": 5,
+            "menu": "4302203d-8262-4496-a17f-6b7ca8034658",
+            "customization": "con ensalada y mucho amor",
+            "employee": 3
+        }
+    },
+    {
+        "model": "employees.employee",
+        "pk": 3,
+        "fields": {
+            "username": "visidevi",
+            "channel": "U031PNDENLD",
+            "tz": "America/Santiago",
+            "deleted": false,
+            "ordered_menus": 0
+        }
+    }
+]

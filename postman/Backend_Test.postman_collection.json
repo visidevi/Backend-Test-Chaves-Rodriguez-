@@ -1,0 +1,1495 @@
+{
+	"info": {
+		"_postman_id": "26bebf30-2c6b-4684-aa8a-6812ca03a351",
+		"name": "Backend_Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Menus",
+			"item": [
+				{
+					"name": "Menus",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.sendRequest({",
+									"    url: pm.environment.get(\"tokenurl\") ,",
+									"    method: 'POST',",
+									"    header: {",
+									"        'content-type': 'application/json'",
+									"    },",
+									"  body: {",
+									"      mode: 'raw',",
+									"        raw: JSON.stringify({ ",
+									"            \"username\": pm.environment.get(\"OAUTH_USERNAME\"), ",
+									"            \"password\": pm.environment.get(\"OAUTH_PASSWORD\")})",
+									"  }",
+									"}, function (err, res) {",
+									"    pm.environment.set(\"authorization\", \"JWT \" + res.json().token);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/menus/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"menus",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Menus",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authorization}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/menus/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"menus",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 18 Feb 2022 00:18:36 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.8.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "Expires",
+									"value": "Fri, 18 Feb 2022 00:18:36 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, no-cache, no-store, must-revalidate, private"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "681"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"1072c059-68e5-45c8-a98d-6dfa844cc92f\",\n        \"date\": \"2022-02-16\",\n        \"options\": [\n            {\n                \"id\": 1,\n                \"description\": \"Revuelto vegano de tofu\"\n            },\n            {\n                \"id\": 2,\n                \"description\": \"Fideos de arroz con salteado de tofu y pimiento\"\n            }\n        ],\n        \"orders\": []\n    },\n    {\n        \"id\": \"4302203d-8262-4496-a17f-6b7ca8034658\",\n        \"date\": \"2022-02-17\",\n        \"options\": [\n            {\n                \"id\": 3,\n                \"description\": \"Tortilla jugosa vegana de calabacín\"\n            },\n            {\n                \"id\": 4,\n                \"description\": \"Revuelto vegano de tofu\"\n            },\n            {\n                \"id\": 5,\n                \"description\": \"Fideos de arroz con salteado de tofu y pimiento\"\n            },\n            {\n                \"id\": 6,\n                \"description\": \"Fideos de arroz con salteado de tofu y pimientos\"\n            }\n        ],\n        \"orders\": [\n            {\n                \"employee__username\": \"visidevi\",\n                \"customization\": \"Con Lechuga\",\n                \"selected_option__description\": \"Revuelto vegano de tofu\"\n            }\n        ]\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "api/menus/",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.sendRequest({",
+									"    url: pm.environment.get(\"tokenurl\") ,",
+									"    method: 'POST',",
+									"    header: {",
+									"        'content-type': 'application/json'",
+									"    },",
+									"  body: {",
+									"      mode: 'raw',",
+									"        raw: JSON.stringify({ ",
+									"            \"username\": pm.environment.get(\"OAUTH_USERNAME\"), ",
+									"            \"password\": pm.environment.get(\"OAUTH_PASSWORD\")})",
+									"  }",
+									"}, function (err, res) {",
+									"    pm.environment.set(\"authorization\", \"JWT \" + res.json().token);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"message\": \"Menu 19 Febrero\",\n    \"date\": \"2022-02-19\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/menus/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"menus",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "api/menus/",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authorization}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"message\": \"Menu 18 Febrero\",\n    \"date\": \"2022-02-18\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/menus/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"menus",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 18 Feb 2022 00:18:49 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.8.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "93"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"ae5e78e8-f0f3-45d4-a5ca-259d8d6029b5\",\n    \"message\": \"Menu 18 Febrero\",\n    \"date\": \"2022-02-18\"\n}"
+						}
+					]
+				},
+				{
+					"name": "api/menus/{pk}",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.sendRequest({",
+									"    url: pm.environment.get(\"tokenurl\") ,",
+									"    method: 'POST',",
+									"    header: {",
+									"        'content-type': 'application/json'",
+									"    },",
+									"  body: {",
+									"      mode: 'raw',",
+									"        raw: JSON.stringify({ ",
+									"            \"username\": pm.environment.get(\"OAUTH_USERNAME\"), ",
+									"            \"password\": pm.environment.get(\"OAUTH_PASSWORD\")})",
+									"  }",
+									"}, function (err, res) {",
+									"    pm.environment.set(\"authorization\", \"JWT \" + res.json().token);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/menus/:pk/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"menus",
+								":pk",
+								""
+							],
+							"variable": [
+								{
+									"key": "pk",
+									"value": "9d955df1-fc63-43c5-8d2f-84ba53bdefb8"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "api/menus/{pk}",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authorization}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/menus/:pk/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"menus",
+										":pk",
+										""
+									],
+									"variable": [
+										{
+											"key": "pk",
+											"value": "ae5e78e8-f0f3-45d4-a5ca-259d8d6029b5"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 18 Feb 2022 00:19:11 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.8.3"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "api/menus/{pk}",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.sendRequest({",
+									"    url: pm.environment.get(\"tokenurl\") ,",
+									"    method: 'POST',",
+									"    header: {",
+									"        'content-type': 'application/json'",
+									"    },",
+									"  body: {",
+									"      mode: 'raw',",
+									"        raw: JSON.stringify({ ",
+									"            \"username\": pm.environment.get(\"OAUTH_USERNAME\"), ",
+									"            \"password\": pm.environment.get(\"OAUTH_PASSWORD\")})",
+									"  }",
+									"}, function (err, res) {",
+									"    pm.environment.set(\"authorization\", \"JWT \" + res.json().token);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/menus/:pk/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"menus",
+								":pk",
+								""
+							],
+							"variable": [
+								{
+									"key": "pk",
+									"value": "3e8a1ab7-741e-467b-87ad-c687a81b46c1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Options",
+			"item": [
+				{
+					"name": "api/options/",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.sendRequest({",
+									"    url: pm.environment.get(\"tokenurl\") ,",
+									"    method: 'POST',",
+									"    header: {",
+									"        'content-type': 'application/json'",
+									"    },",
+									"  body: {",
+									"      mode: 'raw',",
+									"        raw: JSON.stringify({ ",
+									"            \"username\": pm.environment.get(\"OAUTH_USERNAME\"), ",
+									"            \"password\": pm.environment.get(\"OAUTH_PASSWORD\")})",
+									"  }",
+									"}, function (err, res) {",
+									"    pm.environment.set(\"authorization\", \"JWT \" + res.json().token);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/options/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"options",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/option/{pk}",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.sendRequest({",
+									"    url: pm.environment.get(\"tokenurl\") ,",
+									"    method: 'POST',",
+									"    header: {",
+									"        'content-type': 'application/json'",
+									"    },",
+									"  body: {",
+									"      mode: 'raw',",
+									"        raw: JSON.stringify({ ",
+									"            \"username\": pm.environment.get(\"OAUTH_USERNAME\"), ",
+									"            \"password\": pm.environment.get(\"OAUTH_PASSWORD\")})",
+									"  }",
+									"}, function (err, res) {",
+									"    pm.environment.set(\"authorization\", \"JWT \" + res.json().token);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/options/:pk/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"options",
+								":pk",
+								""
+							],
+							"variable": [
+								{
+									"key": "pk",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/menus/:pk/set-option/",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.sendRequest({",
+									"    url: pm.environment.get(\"tokenurl\") ,",
+									"    method: 'POST',",
+									"    header: {",
+									"        'content-type': 'application/json'",
+									"    },",
+									"  body: {",
+									"      mode: 'raw',",
+									"        raw: JSON.stringify({ ",
+									"            \"username\": pm.environment.get(\"OAUTH_USERNAME\"), ",
+									"            \"password\": pm.environment.get(\"OAUTH_PASSWORD\")})",
+									"  }",
+									"}, function (err, res) {",
+									"    pm.environment.set(\"authorization\", \"JWT \" + res.json().token);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"description\": \"Fideos de arroz con salteado de tofu y pimiento\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/menus/:pk/set-option/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"menus",
+								":pk",
+								"set-option",
+								""
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "pk",
+									"value": "3e8a1ab7-741e-467b-87ad-c687a81b46c1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "api/orders/",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.sendRequest({",
+									"    url: pm.environment.get(\"tokenurl\") ,",
+									"    method: 'POST',",
+									"    header: {",
+									"        'content-type': 'application/json'",
+									"    },",
+									"  body: {",
+									"      mode: 'raw',",
+									"        raw: JSON.stringify({ ",
+									"            \"username\": pm.environment.get(\"OAUTH_USERNAME\"), ",
+									"            \"password\": pm.environment.get(\"OAUTH_PASSWORD\")})",
+									"  }",
+									"}, function (err, res) {",
+									"    pm.environment.set(\"authorization\", \"JWT \" + res.json().token);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/orders/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"orders",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/orders/{pk}",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.sendRequest({",
+									"    url: pm.environment.get(\"tokenurl\") ,",
+									"    method: 'POST',",
+									"    header: {",
+									"        'content-type': 'application/json'",
+									"    },",
+									"  body: {",
+									"      mode: 'raw',",
+									"        raw: JSON.stringify({ ",
+									"            \"username\": pm.environment.get(\"OAUTH_USERNAME\"), ",
+									"            \"password\": pm.environment.get(\"OAUTH_PASSWORD\")})",
+									"  }",
+									"}, function (err, res) {",
+									"    pm.environment.set(\"authorization\", \"JWT \" + res.json().token);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/orders/2/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"orders",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/orders/",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.sendRequest({",
+									"    url: pm.environment.get(\"tokenurl\") ,",
+									"    method: 'POST',",
+									"    header: {",
+									"        'content-type': 'application/json'",
+									"    },",
+									"  body: {",
+									"      mode: 'raw',",
+									"        raw: JSON.stringify({ ",
+									"            \"username\": pm.environment.get(\"OAUTH_USERNAME\"), ",
+									"            \"password\": pm.environment.get(\"OAUTH_PASSWORD\")})",
+									"  }",
+									"}, function (err, res) {",
+									"    pm.environment.set(\"authorization\", \"JWT \" + res.json().token);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"employee\": 3,\n    \"selected_option\": 5,\n    \"customization\": \"con ensalada y mucho amor\",\n    \"menu\": \"4302203d-8262-4496-a17f-6b7ca8034658\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/orders/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"orders",
+								""
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "api/orders/",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authorization}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"employee\": \"username_employe\",\n    \"selected_option\": \"id selected_option\",\n    \"menu\": \"uuid menu\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/orders/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"orders",
+										""
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 18 Feb 2022 00:32:39 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.8.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "184"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"employee\": [\n        \"Incorrect type. Expected pk value, received str.\"\n    ],\n    \"selected_option\": [\n        \"Incorrect type. Expected pk value, received str.\"\n    ],\n    \"menu\": [\n        \"“uuid menu” is not a valid UUID.\"\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Employees",
+			"item": [
+				{
+					"name": "/api/employees/",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.sendRequest({",
+									"    url: pm.environment.get(\"tokenurl\") ,",
+									"    method: 'POST',",
+									"    header: {",
+									"        'content-type': 'application/json'",
+									"    },",
+									"  body: {",
+									"      mode: 'raw',",
+									"        raw: JSON.stringify({ ",
+									"            \"username\": pm.environment.get(\"OAUTH_USERNAME\"), ",
+									"            \"password\": pm.environment.get(\"OAUTH_PASSWORD\")})",
+									"  }",
+									"}, function (err, res) {",
+									"    pm.environment.set(\"authorization\", \"JWT \" + res.json().token);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/employees/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"employees",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/orders/",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.sendRequest({",
+									"    url: pm.environment.get(\"tokenurl\") ,",
+									"    method: 'POST',",
+									"    header: {",
+									"        'content-type': 'application/json'",
+									"    },",
+									"  body: {",
+									"      mode: 'raw',",
+									"        raw: JSON.stringify({ ",
+									"            \"username\": pm.environment.get(\"OAUTH_USERNAME\"), ",
+									"            \"password\": pm.environment.get(\"OAUTH_PASSWORD\")})",
+									"  }",
+									"}, function (err, res) {",
+									"    pm.environment.set(\"authorization\", \"JWT \" + res.json().token);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"employee\": \"username_employe\",\n    \"selected_option\": \"id selected_option\",\n    \"menu\": \"uuid menu\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/orders/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"orders",
+								""
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "api/orders/",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authorization}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"employee\": \"username_employe\",\n    \"selected_option\": \"id selected_option\",\n    \"menu\": \"uuid menu\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/orders/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"orders",
+										""
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 18 Feb 2022 00:32:39 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.8.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "184"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"employee\": [\n        \"Incorrect type. Expected pk value, received str.\"\n    ],\n    \"selected_option\": [\n        \"Incorrect type. Expected pk value, received str.\"\n    ],\n    \"menu\": [\n        \"“uuid menu” is not a valid UUID.\"\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Menus/Nora",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.sendRequest({",
+							"    url: pm.environment.get(\"tokenurl\") ,",
+							"    method: 'POST',",
+							"    header: {",
+							"        'content-type': 'application/json'",
+							"    },",
+							"  body: {",
+							"      mode: 'raw',",
+							"        raw: JSON.stringify({ ",
+							"            \"username\": pm.environment.get(\"OAUTH_USERNAME\"), ",
+							"            \"password\": pm.environment.get(\"OAUTH_PASSWORD\")})",
+							"  }",
+							"}, function (err, res) {",
+							"    pm.environment.set(\"authorization\", \"JWT \" + res.json().token);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{authorization}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/menus/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"menus",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Menus",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/menus/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"menus",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 18 Feb 2022 00:18:36 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.3"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "Expires",
+							"value": "Fri, 18 Feb 2022 00:18:36 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "max-age=0, no-cache, no-store, must-revalidate, private"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "681"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"1072c059-68e5-45c8-a98d-6dfa844cc92f\",\n        \"date\": \"2022-02-16\",\n        \"options\": [\n            {\n                \"id\": 1,\n                \"description\": \"Revuelto vegano de tofu\"\n            },\n            {\n                \"id\": 2,\n                \"description\": \"Fideos de arroz con salteado de tofu y pimiento\"\n            }\n        ],\n        \"orders\": []\n    },\n    {\n        \"id\": \"4302203d-8262-4496-a17f-6b7ca8034658\",\n        \"date\": \"2022-02-17\",\n        \"options\": [\n            {\n                \"id\": 3,\n                \"description\": \"Tortilla jugosa vegana de calabacín\"\n            },\n            {\n                \"id\": 4,\n                \"description\": \"Revuelto vegano de tofu\"\n            },\n            {\n                \"id\": 5,\n                \"description\": \"Fideos de arroz con salteado de tofu y pimiento\"\n            },\n            {\n                \"id\": 6,\n                \"description\": \"Fideos de arroz con salteado de tofu y pimientos\"\n            }\n        ],\n        \"orders\": [\n            {\n                \"employee__username\": \"visidevi\",\n                \"customization\": \"Con Lechuga\",\n                \"selected_option__description\": \"Revuelto vegano de tofu\"\n            }\n        ]\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Menu/Employee",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/menu/419cc1e2-9623-417c-9f2f-383b83061542",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"menu",
+						"419cc1e2-9623-417c-9f2f-383b83061542"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Menu/Create-option",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.sendRequest({",
+							"    url: pm.environment.get(\"tokenurl\") ,",
+							"    method: 'POST',",
+							"    header: {",
+							"        'content-type': 'application/json'",
+							"    },",
+							"  body: {",
+							"      mode: 'raw',",
+							"        raw: JSON.stringify({ ",
+							"            \"username\": pm.environment.get(\"OAUTH_USERNAME\"), ",
+							"            \"password\": pm.environment.get(\"OAUTH_PASSWORD\")})",
+							"  }",
+							"}, function (err, res) {",
+							"    pm.environment.set(\"authorization\", \"JWT \" + res.json().token);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{authorization}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"description\": \"Curry de lentejas\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/menus/:pk/set-option/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"menus",
+						":pk",
+						"set-option",
+						""
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "pk",
+							"value": "a9d46cda-4304-4616-8dff-24c41d874c4d"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TOKEN",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"nora\",\n    \"password\": \"admin\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/login/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

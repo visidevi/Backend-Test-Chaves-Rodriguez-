@@ -1,0 +1,50 @@
+[
+    {
+        "model": "menus.option",
+        "pk": 1,
+        "fields": {
+            "description": "Revuelto vegano de tofu",
+            "menu": "1072c059-68e5-45c8-a98d-6dfa844cc92f"
+        }
+    },
+    {
+        "model": "menus.option",
+        "pk": 2,
+        "fields": {
+            "description": "Fideos de arroz con salteado de tofu y pimiento",
+            "menu": "1072c059-68e5-45c8-a98d-6dfa844cc92f"
+        }
+    },
+    {
+        "model": "menus.option",
+        "pk": 3,
+        "fields": {
+            "description": "Tortilla jugosa vegana de calabac\u00edn",
+            "menu": "4302203d-8262-4496-a17f-6b7ca8034658"
+        }
+    },
+    {
+        "model": "menus.option",
+        "pk": 4,
+        "fields": {
+            "description": "Revuelto vegano de tofu",
+            "menu": "4302203d-8262-4496-a17f-6b7ca8034658"
+        }
+    },
+    {
+        "model": "menus.option",
+        "pk": 5,
+        "fields": {
+            "description": "Fideos de arroz con salteado de tofu y pimiento",
+            "menu": "4302203d-8262-4496-a17f-6b7ca8034658"
+        }
+    },
+    {
+        "model": "menus.option",
+        "pk": 7,
+        "fields": {
+            "description": "Curry de garbanzos con mango",
+            "menu": "9d955df1-fc63-43c5-8d2f-84ba53bdefb8"
+        }
+    }
+]

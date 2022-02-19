@@ -1,4 +1,4 @@
-## cornershop-backend-test
+# Backend-Test-Chaves-Rodriguez-(cornershop-backend-test)
 
 ### Running the development environment
 
@@ -295,4 +295,3 @@ celery -A backend_test beat --loglevel DEBUG
 `-format=json --pks 1 menus.menu > fixtures/menus.json`
 
 `--format=json --pks 1 menus.option >> fixtures/options.json`
-# Backend-Test-Chaves-Rodriguez-

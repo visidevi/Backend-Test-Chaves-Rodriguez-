@@ -1,0 +1,13 @@
+[
+    {
+        "model": "orders.order",
+        "pk": 41,
+        "fields": {
+            "created": "2022-02-18T01:52:25.073Z",
+            "selected_option": 5,
+            "menu": "4302203d-8262-4496-a17f-6b7ca8034658",
+            "customization": "con ensalada y mucho amor",
+            "employee": 3
+        }
+    }
+]
